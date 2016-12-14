@@ -1,0 +1,50 @@
+/**/
+html {
+  background:#018DED url(http://unsplash.it/1500/1000?image=368);
+  background-size: cover;
+  font-family:'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+}
+
+body {
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center; /*defines how the browser distributes space around flex items. Vertical alignment*/
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white; /* gives us a white square */
+  border-radius: 50%; /* makes it a circle */
+  margin: 50px auto; /* vertical | horizontal (auto centers us horizontally)*/
+  position: relative; /*adjusts the elements position without changing layout*/
+  padding: 2rem; /* interior padding to prevent clock hands from hitting the edge*/
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1), /*adds outer shadow*/
+    inset 0 0 0 3px #EFEFEF, /* adds inner shadow */
+    inset 0 0 10px black, /* adds another inner shadow */
+    0 0 10px rgba(0,0,0,0.2); /* adds another outer shadow */
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*transform: translateY(-3px);*/
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  background: black;
+  position: absolute; /* don't leave space for the element.Position at a specified position*/
+  top: 50%; /* specifies postion between top margin edge of the element and the top edge of its containing block*/
+  transform-origin: 100%; /*defaults to 50%. 100% puts pivot on the right hand side of the x-axis*/
+  transform: rotate(90deg); /* sets default to be 12 noon*/
+  transition: all 0.1s; /* sets length of our transitions*/
+  transition-timing-function: cubic-bezier(0, 1.89, 0.58, 1); /* gives us the 'ticking' look*/
+}
