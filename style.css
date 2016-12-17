@@ -48,3 +48,13 @@ body {
   transition: all 0.1s; /* sets length of our transitions*/
   transition-timing-function: cubic-bezier(0, 1.89, 0.58, 1); /* gives us the 'ticking' look*/
 }
+
+.hour-hand {
+  width: 35%;
+  margin-left: 45px;
+}
+
+.second-hand {
+  height: 3px;
+  background: white;
+}
